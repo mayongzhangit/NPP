@@ -1,0 +1,18 @@
+server:
+  port: 8081
+  servlet:
+    contextPath: /
+spring:
+  application:
+    name: npp-operation
+  mvc:
+    servlet:
+      loadOnStartup: 1
+  profiles:
+    active: local
+    include: tomcat
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

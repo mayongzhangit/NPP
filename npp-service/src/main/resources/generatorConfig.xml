@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <context id="MybatisGenerator" targetRuntime="MyBatis3">
+
+        <!--<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />-->
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+        <!--model 实现序列化-->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+        <!--DB注释第二步：指定自己的注释生成器 -->
+        <commentGenerator type="com.myz.mbg.comment.DBCommentGenerator">
+            <property name="suppressDate" value="true"/>
+
+            <!-- 两个连用 -->
+            <property name="suppressAllComments" value="false"/>
+            <property name="addRemarkComments" value="true"/>
+
+            <property name="javaFileEncoding" value="UTF-8"/>
+        </commentGenerator>
+
+        <!--load from properties-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://10.20.12.244:3306/activity?characterEncoding=UTF-8"
+                        userId="activity001"
+                        password="activity001*123">
+        </jdbcConnection>
+
+        <!--model-->
+        <javaModelGenerator targetPackage="com.shareit.game.api.service.activity.model" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <!--SQL mapper.xml
+        <sqlMapGenerator targetPackage="com.shareit.game.api.service.activity.mapper" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>-->
+
+        <!--mapper   type=[XMLMAPPER|ANNOTATEDMAPPER] 的话sqlMapGenerator才生效，这里是type=ANNOTATEDMAPPER -->
+        <javaClientGenerator type="ANNOTATEDMAPPER" targetPackage="com.shareit.game.api.service.activity.mapper"  targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+        <table tableName="wz_access_daily" domainObjectName="WzAccessDaily">
+            <!--db下划线映射到dao转成驼峰式  默认行为-->
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="wz_sys_assign_daily" domainObjectName="WzSysAssignDaily">
+            <!--db下划线映射到dao转成驼峰式  默认行为-->
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="wz_account_bind" domainObjectName="WzAccountBind">
+            <!--db下划线映射到dao转成驼峰式  默认行为-->
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="wz_total_coins_daily" domainObjectName="WzTotalCoinsDaily">
+            <!--db下划线映射到dao转成驼峰式  默认行为-->
+            <property name="useActualColumnNames" value="false" />
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+    </context>
+</generatorConfiguration>

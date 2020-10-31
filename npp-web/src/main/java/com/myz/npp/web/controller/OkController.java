@@ -25,15 +25,11 @@ public class OkController {
 
     /**
      *
-     * @param exFlag
      * @return
      */
     @GetMapping("/ok")
-    public ApiResult ok(@RequestParam(required = false,defaultValue = "false") boolean exFlag){
+    public ApiResult ok(){
 
-        if (exFlag){
-            throw new MyzBizException("manualEx","手工抛出异常");
-        }
         return ApiResult.OK("OK");
     }
 }

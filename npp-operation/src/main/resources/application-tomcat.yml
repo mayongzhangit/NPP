@@ -1,0 +1,12 @@
+#参考下自己的blog  https://blog.csdn.net/mayongzhan_csdn/article/details/102931268
+server:
+  tomcat:
+    basedir: ./server/${spring.application.name}
+    accesslog:
+      enabled: true
+      directory: ./data/logs # D:/data/logs # 可以是绝对路径，也可以是Tomcat basedir的相对路径
+      prefix: ${spring.application.name}_access_log # access_log
+      suffix: .log # .log
+    maxThread: 199 #200
+    maxConnections: 9999 #10000
+    acceptCount: 100 # 跟操作系统默认(mac和linux中128)的全连接队列大小有关系，详情参考自己的blog

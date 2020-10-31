@@ -11,3 +11,5 @@
 .settings/
 .project
 *.log
+logs
+server
