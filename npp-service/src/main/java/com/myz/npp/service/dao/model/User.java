@@ -52,22 +52,27 @@ public class User implements Serializable {
     private Boolean gender;
 
     /**
+     * 国家
      */
     private String country;
 
     /**
+     * 省份
      */
     private String province;
 
     /**
+     * 城市
      */
     private String city;
 
     /**
+     * 创建时间
      */
     private String createTime;
 
     /**
+     * 更新时间
      */
     private String updateTime;
 
