@@ -48,6 +48,14 @@ public class UserSqlProvider {
             sql.VALUES("mobile", "#{mobile,jdbcType=VARCHAR}");
         }
         
+        if (record.getEmail() != null) {
+            sql.VALUES("email", "#{email,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getPasswd() != null) {
+            sql.VALUES("passwd", "#{passwd,jdbcType=VARCHAR}");
+        }
+        
         if (record.getNickName() != null) {
             sql.VALUES("nick_name", "#{nickName,jdbcType=VARCHAR}");
         }
@@ -99,6 +107,8 @@ public class UserSqlProvider {
         sql.SELECT("app_id");
         sql.SELECT("type");
         sql.SELECT("mobile");
+        sql.SELECT("email");
+        sql.SELECT("passwd");
         sql.SELECT("nick_name");
         sql.SELECT("avatar_url");
         sql.SELECT("gender");
@@ -147,6 +157,14 @@ public class UserSqlProvider {
         
         if (record.getMobile() != null) {
             sql.SET("mobile = #{record.mobile,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getEmail() != null) {
+            sql.SET("email = #{record.email,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getPasswd() != null) {
+            sql.SET("passwd = #{record.passwd,jdbcType=VARCHAR}");
         }
         
         if (record.getNickName() != null) {
@@ -199,6 +217,8 @@ public class UserSqlProvider {
         sql.SET("app_id = #{record.appId,jdbcType=VARCHAR}");
         sql.SET("type = #{record.type,jdbcType=SMALLINT}");
         sql.SET("mobile = #{record.mobile,jdbcType=VARCHAR}");
+        sql.SET("email = #{record.email,jdbcType=VARCHAR}");
+        sql.SET("passwd = #{record.passwd,jdbcType=VARCHAR}");
         sql.SET("nick_name = #{record.nickName,jdbcType=VARCHAR}");
         sql.SET("avatar_url = #{record.avatarUrl,jdbcType=VARCHAR}");
         sql.SET("gender = #{record.gender,jdbcType=BIT}");
@@ -236,6 +256,14 @@ public class UserSqlProvider {
         
         if (record.getMobile() != null) {
             sql.SET("mobile = #{mobile,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getEmail() != null) {
+            sql.SET("email = #{email,jdbcType=VARCHAR}");
+        }
+        
+        if (record.getPasswd() != null) {
+            sql.SET("passwd = #{passwd,jdbcType=VARCHAR}");
         }
         
         if (record.getNickName() != null) {

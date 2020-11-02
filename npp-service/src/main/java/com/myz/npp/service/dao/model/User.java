@@ -22,7 +22,7 @@ public class User implements Serializable {
     private String platformId;
 
     /**
-     * 开放平台appId
+     * 寮€鏀惧钩鍙癮ppId
      */
     private String appId;
 
@@ -35,6 +35,16 @@ public class User implements Serializable {
      * 手机号
      */
     private String mobile;
+
+    /**
+     * 邮箱
+     */
+    private String email;
+
+    /**
+     * 密码 （MD5加密）
+     */
+    private String passwd;
 
     /**
      * 昵称
@@ -131,6 +141,22 @@ public class User implements Serializable {
         this.mobile = mobile == null ? null : mobile.trim();
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email == null ? null : email.trim();
+    }
+
+    public String getPasswd() {
+        return passwd;
+    }
+
+    public void setPasswd(String passwd) {
+        this.passwd = passwd == null ? null : passwd.trim();
+    }
+
     public String getNickName() {
         return nickName;
     }
@@ -215,6 +241,8 @@ public class User implements Serializable {
         sb.append(", appId=").append(appId);
         sb.append(", type=").append(type);
         sb.append(", mobile=").append(mobile);
+        sb.append(", email=").append(email);
+        sb.append(", passwd=").append(passwd);
         sb.append(", nickName=").append(nickName);
         sb.append(", avatarUrl=").append(avatarUrl);
         sb.append(", gender=").append(gender);

@@ -33,16 +33,18 @@ public interface UserMapper {
     @Insert({
         "insert into npp_user (user_id, platform_id, ",
         "app_id, type, mobile, ",
-        "nick_name, avatar_url, ",
-        "gender, country, province, ",
-        "city, create_time, ",
-        "update_time, status)",
+        "email, passwd, nick_name, ",
+        "avatar_url, gender, country, ",
+        "province, city, ",
+        "create_time, update_time, ",
+        "status)",
         "values (#{userId,jdbcType=VARCHAR}, #{platformId,jdbcType=VARCHAR}, ",
         "#{appId,jdbcType=VARCHAR}, #{type,jdbcType=SMALLINT}, #{mobile,jdbcType=VARCHAR}, ",
-        "#{nickName,jdbcType=VARCHAR}, #{avatarUrl,jdbcType=VARCHAR}, ",
-        "#{gender,jdbcType=BIT}, #{country,jdbcType=VARCHAR}, #{province,jdbcType=VARCHAR}, ",
-        "#{city,jdbcType=VARCHAR}, #{createTime,jdbcType=VARCHAR}, ",
-        "#{updateTime,jdbcType=VARCHAR}, #{status,jdbcType=SMALLINT})"
+        "#{email,jdbcType=VARCHAR}, #{passwd,jdbcType=VARCHAR}, #{nickName,jdbcType=VARCHAR}, ",
+        "#{avatarUrl,jdbcType=VARCHAR}, #{gender,jdbcType=BIT}, #{country,jdbcType=VARCHAR}, ",
+        "#{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, ",
+        "#{createTime,jdbcType=VARCHAR}, #{updateTime,jdbcType=VARCHAR}, ",
+        "#{status,jdbcType=SMALLINT})"
     })
     @SelectKey(statement="SELECT LAST_INSERT_ID()", keyProperty="id", before=false, resultType=Long.class)
     int insert(User record);
@@ -59,6 +61,8 @@ public interface UserMapper {
         @Result(column="app_id", property="appId", jdbcType=JdbcType.VARCHAR),
         @Result(column="type", property="type", jdbcType=JdbcType.SMALLINT),
         @Result(column="mobile", property="mobile", jdbcType=JdbcType.VARCHAR),
+        @Result(column="email", property="email", jdbcType=JdbcType.VARCHAR),
+        @Result(column="passwd", property="passwd", jdbcType=JdbcType.VARCHAR),
         @Result(column="nick_name", property="nickName", jdbcType=JdbcType.VARCHAR),
         @Result(column="avatar_url", property="avatarUrl", jdbcType=JdbcType.VARCHAR),
         @Result(column="gender", property="gender", jdbcType=JdbcType.BIT),
@@ -73,8 +77,8 @@ public interface UserMapper {
 
     @Select({
         "select",
-        "id, user_id, platform_id, app_id, type, mobile, nick_name, avatar_url, gender, ",
-        "country, province, city, create_time, update_time, status",
+        "id, user_id, platform_id, app_id, type, mobile, email, passwd, nick_name, avatar_url, ",
+        "gender, country, province, city, create_time, update_time, status",
         "from npp_user",
         "where id = #{id,jdbcType=BIGINT}"
     })
@@ -85,6 +89,8 @@ public interface UserMapper {
         @Result(column="app_id", property="appId", jdbcType=JdbcType.VARCHAR),
         @Result(column="type", property="type", jdbcType=JdbcType.SMALLINT),
         @Result(column="mobile", property="mobile", jdbcType=JdbcType.VARCHAR),
+        @Result(column="email", property="email", jdbcType=JdbcType.VARCHAR),
+        @Result(column="passwd", property="passwd", jdbcType=JdbcType.VARCHAR),
         @Result(column="nick_name", property="nickName", jdbcType=JdbcType.VARCHAR),
         @Result(column="avatar_url", property="avatarUrl", jdbcType=JdbcType.VARCHAR),
         @Result(column="gender", property="gender", jdbcType=JdbcType.BIT),
@@ -113,6 +119,8 @@ public interface UserMapper {
           "app_id = #{appId,jdbcType=VARCHAR},",
           "type = #{type,jdbcType=SMALLINT},",
           "mobile = #{mobile,jdbcType=VARCHAR},",
+          "email = #{email,jdbcType=VARCHAR},",
+          "passwd = #{passwd,jdbcType=VARCHAR},",
           "nick_name = #{nickName,jdbcType=VARCHAR},",
           "avatar_url = #{avatarUrl,jdbcType=VARCHAR},",
           "gender = #{gender,jdbcType=BIT},",
