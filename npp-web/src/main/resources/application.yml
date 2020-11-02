@@ -10,7 +10,10 @@ spring:
       loadOnStartup: 1
   profiles:
     active: local
-    include: tomcat
+    include: tomcat,dubbo,mystarter
+logging:
+  level:
+    PARAM-RETVAL-PRINTER: info
 management:
   endpoints:
     web:

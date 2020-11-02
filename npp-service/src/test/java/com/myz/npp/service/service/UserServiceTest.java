@@ -2,6 +2,7 @@ package com.myz.npp.service.service;
 
 import com.myz.npp.service.NppServiceStartApp;
 import com.myz.npp.service.dao.model.User;
+import com.myz.npp.service.service.user.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8082
   servlet:
     contextPath: /
 spring:
@@ -16,7 +16,13 @@ spring:
       loadOnStartup: 1
   profiles:
     active: local
+    include: dubbo,mystarter
 logging:
   level:
-    PARAM-RETVAL-PRINTER: debug
-  #    com.homelearning.user.dao.mapper: debug
+#    PARAM-RETVAL-PRINTER: debug
+    com.myz.npp.service.dao.mapper: debug
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

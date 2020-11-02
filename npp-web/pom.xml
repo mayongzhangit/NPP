@@ -16,6 +16,11 @@
   <dependencies>
     <!-- 二方包 -->
     <dependency>
+      <groupId>com.myz</groupId>
+      <artifactId>npp-api</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
       <groupId>com.myz.starters</groupId>
       <artifactId>web-spring-boot-starter</artifactId>
     </dependency>
@@ -31,6 +36,31 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+
+    <!-- dubbo start -->
+    <dependency>
+      <groupId>org.apache.dubbo</groupId>
+      <artifactId>dubbo-spring-boot-starter</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.dubbo</groupId>
+      <artifactId>dubbo</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.curator</groupId>
+      <artifactId>curator-framework</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.curator</groupId>
+      <artifactId>curator-recipes</artifactId>
+    </dependency>
+    <!-- dubbo end -->
+    <!-- zkServer版本低 显示指定zookeeper 客户端版本 否则出现：KeeperErrorCode = Unimplemented for  -->
+    <dependency>
+      <groupId>org.apache.zookeeper</groupId>
+      <artifactId>zookeeper</artifactId>
+      <version>3.4.14</version>
     </dependency>
   </dependencies>
 

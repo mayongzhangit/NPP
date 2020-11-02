@@ -24,6 +24,10 @@
     <name>npp-parent</name>
     <url>http://www.example.com</url>
 
+    <properties>
+        <dubbo.version>2.7.1</dubbo.version>
+    </properties>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -33,6 +37,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
             <dependency>
                 <groupId>com.myz.starters</groupId>
                 <artifactId>web-spring-boot-starter</artifactId>

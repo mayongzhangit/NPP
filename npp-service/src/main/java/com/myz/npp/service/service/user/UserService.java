@@ -1,4 +1,4 @@
-package com.myz.npp.service.service;
+package com.myz.npp.service.service.user;
 
 import com.myz.npp.service.dao.mapper.UserMapper;
 import com.myz.npp.service.dao.model.User;

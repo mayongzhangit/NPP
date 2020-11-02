@@ -1,0 +1,14 @@
+# https://github.com/apache/dubbo-spring-boot-project/blob/2.7.x/dubbo-spring-boot-samples/registry-samples/zookeeper-samples/provider-sample/src/main/resources/application.properties
+dubbo:
+  protocol:
+    name: dubbo
+  application:
+    name: ${spring.application.name}-dubbo-consumer
+  registry:
+    address: zookeeper://127.0.0.1:2181 #N/A
+    file: ${user.home}/dubbo-cache/${spring.application.name}/dubbo.cache
+  consumer:
+    check: false
+npp:
+  service:
+    version: 1.0.0
