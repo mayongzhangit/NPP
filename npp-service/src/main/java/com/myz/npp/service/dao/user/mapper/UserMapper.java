@@ -1,7 +1,7 @@
-package com.myz.npp.service.dao.mapper;
+package com.myz.npp.service.dao.user.mapper;
 
-import com.myz.npp.service.dao.model.User;
-import com.myz.npp.service.dao.model.UserExample;
+import com.myz.npp.service.dao.user.model.User;
+import com.myz.npp.service.dao.user.model.UserExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.DeleteProvider;
@@ -25,13 +25,13 @@ public interface UserMapper {
     int deleteByExample(UserExample example);
 
     @Delete({
-        "delete from npp_user",
+        "delete from npp_user0",
         "where id = #{id,jdbcType=BIGINT}"
     })
     int deleteByPrimaryKey(Long id);
 
     @Insert({
-        "insert into npp_user (user_id, platform_id, ",
+        "insert into npp_user0 (user_id, platform_id, ",
         "app_id, type, mobile, ",
         "email, passwd, nick_name, ",
         "avatar_url, gender, country, ",
@@ -79,7 +79,7 @@ public interface UserMapper {
         "select",
         "id, user_id, platform_id, app_id, type, mobile, email, passwd, nick_name, avatar_url, ",
         "gender, country, province, city, create_time, update_time, status",
-        "from npp_user",
+        "from npp_user0",
         "where id = #{id,jdbcType=BIGINT}"
     })
     @Results({
@@ -113,7 +113,7 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     @Update({
-        "update npp_user",
+        "update npp_user0",
         "set user_id = #{userId,jdbcType=VARCHAR},",
           "platform_id = #{platformId,jdbcType=VARCHAR},",
           "app_id = #{appId,jdbcType=VARCHAR},",

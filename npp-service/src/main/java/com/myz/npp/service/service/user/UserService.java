@@ -1,8 +1,8 @@
 package com.myz.npp.service.service.user;
 
-import com.myz.npp.service.dao.mapper.UserMapper;
-import com.myz.npp.service.dao.model.User;
-import com.myz.npp.service.dao.model.UserExample;
+import com.myz.npp.service.dao.user.mapper.UserMapper;
+import com.myz.npp.service.dao.user.model.User;
+import com.myz.npp.service.dao.user.model.UserExample;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

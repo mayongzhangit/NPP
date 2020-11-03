@@ -1,4 +1,4 @@
-package com.myz.npp.service.dao.model;
+package com.myz.npp.service.dao.user.model;
 
 import java.io.Serializable;
 

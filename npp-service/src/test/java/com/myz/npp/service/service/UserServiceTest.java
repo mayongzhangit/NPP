@@ -1,7 +1,7 @@
 package com.myz.npp.service.service;
 
 import com.myz.npp.service.NppServiceStartApp;
-import com.myz.npp.service.dao.model.User;
+import com.myz.npp.service.dao.user.model.User;
 import com.myz.npp.service.service.user.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;

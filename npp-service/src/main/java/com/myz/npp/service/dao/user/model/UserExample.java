@@ -1,4 +1,4 @@
-package com.myz.npp.service.dao.model;
+package com.myz.npp.service.dao.user.model;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,7 +1,13 @@
 spring:
   shardingsphere:
     datasource:
-      names: ds0,ds1
+      names: defaultDs,ds0,ds1
+      defaultDs:
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://47.99.144.200:3306/npp?characterEncoding=UTF-8
+        username: zjx_rd
+        password: zaijiaxue
+        driver-class-name: com.mysql.jdbc.Driver
       ds0:
         type: com.alibaba.druid.pool.DruidDataSource
         url: jdbc:mysql://47.99.144.200:3306/npp0?characterEncoding=UTF-8
@@ -15,6 +21,7 @@ spring:
         password: zaijiaxue
         driver-class-name: com.mysql.jdbc.Driver
     sharding:
+      defaultDataSourceName: defaultDs
       tables:
         npp_user:
           actualDataNodes: ds$->{0..1}.npp_user$->{0..2}
