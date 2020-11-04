@@ -1,45 +1,7 @@
-#spring:
-#  datasource:
-#    username: zjx_rd
-#    password: zaijiaxue
-#    type: com.alibaba.druid.pool.DruidDataSource
-#    driver-class-name: com.mysql.jdbc.Driver
-#    url: jdbc:mysql://47.99.144.200:3306/npp?characterEncoding=UTF-8&useUnicode=true&useSSL=false
 spring:
-  shardingsphere:
-    datasource:
-      names: ds0,ds1
-      #      ds:
-      #        type: com.alibaba.druid.pool.DruidDataSource
-      #        url: jdbc:mysql://47.99.144.200:3306/npp?characterEncoding=UTF-8
-      #        username: zjx_rd
-      #        password: zaijiaxue
-      #        driver-class-name: com.mysql.jdbc.Driver
-      ds0:
-        type: com.alibaba.druid.pool.DruidDataSource
-        url: jdbc:mysql://47.99.144.200:3306/npp0?characterEncoding=UTF-8
-        username: zjx_rd
-        password: zaijiaxue
-        driver-class-name: com.mysql.jdbc.Driver
-      ds1:
-        type: com.alibaba.druid.pool.DruidDataSource
-        url: jdbc:mysql://47.99.144.200:3306/npp1?characterEncoding=UTF-8
-        username: zjx_rd
-        password: zaijiaxue
-        driver-class-name: com.mysql.jdbc.Driver
-    sharding:
-      #      defaultDataSourceName: ds
-      tables:
-        npp_user:
-          actualDataNodes: ds$->{0..1}.npp_user$->{0..2}
-          databaseStrategy:
-            inline:
-              shardingColumn: user_id
-              algorithmExpression: ds$->{user_id.hashCode() % 2}
-          tableStrategy:
-            inline:
-              shardingColumn: user_id
-              algorithmExpression: npp_user$->{user_id.hashCode() %3}
-    props:
-      sql:
-        show: true
+  datasource:
+    username: zjx_rd
+    password: zaijiaxue
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://47.99.144.200:3306/npp?characterEncoding=UTF-8&useUnicode=true&useSSL=false
