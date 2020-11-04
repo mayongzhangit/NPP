@@ -12,21 +12,21 @@ public class UserSqlProvider {
 
     public String countByExample(UserExample example) {
         SQL sql = new SQL();
-        sql.SELECT("count(*)").FROM("npp_user0");
+        sql.SELECT("count(*)").FROM("npp_user");
         applyWhere(sql, example, false);
         return sql.toString();
     }
 
     public String deleteByExample(UserExample example) {
         SQL sql = new SQL();
-        sql.DELETE_FROM("npp_user0");
+        sql.DELETE_FROM("npp_user");
         applyWhere(sql, example, false);
         return sql.toString();
     }
 
     public String insertSelective(User record) {
         SQL sql = new SQL();
-        sql.INSERT_INTO("npp_user0");
+        sql.INSERT_INTO("npp_user");
         
         if (record.getUserId() != null) {
             sql.VALUES("user_id", "#{userId,jdbcType=VARCHAR}");
@@ -118,7 +118,7 @@ public class UserSqlProvider {
         sql.SELECT("create_time");
         sql.SELECT("update_time");
         sql.SELECT("status");
-        sql.FROM("npp_user0");
+        sql.FROM("npp_user");
         applyWhere(sql, example, false);
         
         if (example != null && example.getOrderByClause() != null) {
@@ -133,7 +133,7 @@ public class UserSqlProvider {
         UserExample example = (UserExample) parameter.get("example");
         
         SQL sql = new SQL();
-        sql.UPDATE("npp_user0");
+        sql.UPDATE("npp_user");
         
         if (record.getId() != null) {
             sql.SET("id = #{record.id,jdbcType=BIGINT}");
@@ -209,7 +209,7 @@ public class UserSqlProvider {
 
     public String updateByExample(Map<String, Object> parameter) {
         SQL sql = new SQL();
-        sql.UPDATE("npp_user0");
+        sql.UPDATE("npp_user");
         
         sql.SET("id = #{record.id,jdbcType=BIGINT}");
         sql.SET("user_id = #{record.userId,jdbcType=VARCHAR}");
@@ -236,7 +236,7 @@ public class UserSqlProvider {
 
     public String updateByPrimaryKeySelective(User record) {
         SQL sql = new SQL();
-        sql.UPDATE("npp_user0");
+        sql.UPDATE("npp_user");
         
         if (record.getUserId() != null) {
             sql.SET("user_id = #{userId,jdbcType=VARCHAR}");

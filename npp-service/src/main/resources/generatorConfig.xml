@@ -43,7 +43,7 @@
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
 
-        <table tableName="npp_user0" domainObjectName="User">
+        <table tableName="npp_user" domainObjectName="User">
             <!--db下划线映射到dao转成驼峰式  默认行为-->
             <property name="useActualColumnNames" value="false" />
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>

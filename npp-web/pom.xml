@@ -14,12 +14,17 @@
   <url>http://www.example.com</url>
 
   <dependencies>
-    <!-- 二方包 -->
+    <!-- 二方包
+    npp-service和npp-user-service两个工程都实现了，
+    启动哪个服务提供方就是用哪个服务提供方，
+    有一个是使用shardingJdbc 另一个没有使用
+    -->
     <dependency>
       <groupId>com.myz</groupId>
-      <artifactId>npp-api</artifactId>
+      <artifactId>npp-user-api</artifactId>
       <version>${project.version}</version>
     </dependency>
+    <!-- 二方包组件 -->
     <dependency>
       <groupId>com.myz.starters</groupId>
       <artifactId>web-spring-boot-starter</artifactId>
@@ -28,14 +33,15 @@
       <groupId>com.myz.starters</groupId>
       <artifactId>aspect-spring-boot-starter</artifactId>
     </dependency>
-<!--    <dependency>-->
-<!--      <groupId>com.fasterxml.jackson.dataformat</groupId>-->
-<!--      <artifactId>jackson-dataformat-xml</artifactId>-->
-<!--    </dependency>-->
+    <dependency>
+      <groupId>com.myz.starters</groupId>
+      <artifactId>login-spring-boot-starter</artifactId>
+    </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
+
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-actuator</artifactId>

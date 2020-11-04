@@ -17,8 +17,8 @@
     <modules>
         <module>npp-service</module>
         <module>npp-operation</module>
-        <module>npp-api</module>
         <module>npp-web</module>
+        <module>npp-service-parent</module>
     </modules>
 
     <name>npp-parent</name>
@@ -27,6 +27,7 @@
     <properties>
         <dubbo.version>2.7.1</dubbo.version>
         <sharding-sphere.version>4.0.1</sharding-sphere.version>
+        <myz.starters.version>1.1.1-SNAPSHOT</myz.starters.version>
     </properties>
 
     <dependencyManagement>
@@ -41,12 +42,17 @@
             <dependency>
                 <groupId>com.myz.starters</groupId>
                 <artifactId>web-spring-boot-starter</artifactId>
-                <version>1.2-SNAPSHOT</version>
+                <version>${myz.starters.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.myz.starters</groupId>
                 <artifactId>aspect-spring-boot-starter</artifactId>
-                <version>1.2-SNAPSHOT</version>
+                <version>${myz.starters.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.myz.starters</groupId>
+                <artifactId>login-spring-boot-starter</artifactId>
+                <version>${myz.starters.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>

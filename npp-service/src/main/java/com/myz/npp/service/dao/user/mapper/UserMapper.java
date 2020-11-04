@@ -25,13 +25,13 @@ public interface UserMapper {
     int deleteByExample(UserExample example);
 
     @Delete({
-        "delete from npp_user0",
+        "delete from npp_user",
         "where id = #{id,jdbcType=BIGINT}"
     })
     int deleteByPrimaryKey(Long id);
 
     @Insert({
-        "insert into npp_user0 (user_id, platform_id, ",
+        "insert into npp_user (user_id, platform_id, ",
         "app_id, type, mobile, ",
         "email, passwd, nick_name, ",
         "avatar_url, gender, country, ",
@@ -79,7 +79,7 @@ public interface UserMapper {
         "select",
         "id, user_id, platform_id, app_id, type, mobile, email, passwd, nick_name, avatar_url, ",
         "gender, country, province, city, create_time, update_time, status",
-        "from npp_user0",
+        "from npp_user",
         "where id = #{id,jdbcType=BIGINT}"
     })
     @Results({
@@ -113,7 +113,7 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     @Update({
-        "update npp_user0",
+        "update npp_user",
         "set user_id = #{userId,jdbcType=VARCHAR},",
           "platform_id = #{platformId,jdbcType=VARCHAR},",
           "app_id = #{appId,jdbcType=VARCHAR},",

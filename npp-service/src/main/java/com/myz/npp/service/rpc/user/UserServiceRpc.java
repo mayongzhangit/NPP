@@ -34,4 +34,15 @@ public class UserServiceRpc implements UserServiceApi {
         return ApiResult.OK(user);
     }
 
+    /**
+     * 根据分片键查询
+     * @param userId
+     * @return
+     */
+    @Override
+    public ApiResult getByShardingColumn(String userId) {
+        User user = userService.getByShardingColumn(userId);
+        return ApiResult.OK(user);
+    }
+
 }

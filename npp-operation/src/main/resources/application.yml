@@ -10,7 +10,7 @@ spring:
       loadOnStartup: 1
   profiles:
     active: local
-    include: tomcat
+    include: tomcat,mystarter
 management:
   endpoints:
     web:

@@ -17,7 +17,7 @@
     <dependencies>
         <dependency>
             <groupId>com.myz</groupId>
-            <artifactId>npp-api</artifactId>
+            <artifactId>npp-user-api</artifactId>
             <version>${project.version}</version>
         </dependency>
         <!-- 二方包 -->

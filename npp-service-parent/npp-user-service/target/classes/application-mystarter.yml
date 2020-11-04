@@ -1,0 +1,7 @@
+## 自定义starter组件配置
+aspect:
+  printer:
+    param:
+      enabled: true
+    retVal:
+      enabled: false
