@@ -1,7 +1,6 @@
 package com.myz.npp.service.dao.usermapping.model;
 
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  * 
@@ -28,11 +27,11 @@ public class UserMapping implements Serializable {
 
     /**
      */
-    private Date createTime;
+    private String createTime;
 
     /**
      */
-    private Date updateTime;
+    private String updateTime;
 
     /**
      * -1删除 0默认
@@ -73,20 +72,20 @@ public class UserMapping implements Serializable {
         this.email = email == null ? null : email.trim();
     }
 
-    public Date getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime == null ? null : createTime.trim();
     }
 
-    public Date getUpdateTime() {
+    public String getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime == null ? null : updateTime.trim();
     }
 
     public Short getStatus() {

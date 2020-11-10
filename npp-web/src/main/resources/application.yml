@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 80 # 域名直接指向服务器的80 端口  没有经过slb
   servlet:
     contextPath: /
 spring:
@@ -19,3 +19,10 @@ management:
     web:
       exposure:
         include: "*"
+npp:
+  domain: http://test1.zaijiaxue.tech/
+---
+spring:
+  profiles: local
+server:
+  port: 8888

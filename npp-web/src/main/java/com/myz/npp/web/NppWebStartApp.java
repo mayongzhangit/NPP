@@ -4,6 +4,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.StringHttpMessageConverter;
+import org.springframework.web.client.RestTemplate;
+
+import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 /**
  * @author yzMa
@@ -18,6 +25,26 @@ public class NppWebStartApp implements CommandLineRunner {
     public static void main(String[] args) {
 
         SpringApplication.run(NppWebStartApp.class,args);
+    }
+
+    /**
+     * 替换String消息转换器编码
+     *
+     * @return
+     */
+    @Bean("nppRestTemplate")
+    RestTemplate nppRestTemplate() {
+
+        RestTemplate restTemplate = new RestTemplate();
+        List<HttpMessageConverter<?>> messageConverters = restTemplate.getMessageConverters();
+        for (int i = 0; i < messageConverters.size(); i++) {
+            HttpMessageConverter<?> httpMessageConverter = messageConverters.get(i);
+            if (httpMessageConverter.getClass().getName().equals(StringHttpMessageConverter.class.getName())) {
+                messageConverters.set(i, new StringHttpMessageConverter(StandardCharsets.UTF_8));
+            }
+        }
+
+        return restTemplate;
     }
 
     @Override

@@ -35,8 +35,8 @@ public interface UserMappingMapper {
         "email, create_time, ",
         "update_time, status)",
         "values (#{userId,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, ",
-        "#{email,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, ",
-        "#{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=SMALLINT})"
+        "#{email,jdbcType=VARCHAR}, #{createTime,jdbcType=VARCHAR}, ",
+        "#{updateTime,jdbcType=VARCHAR}, #{status,jdbcType=SMALLINT})"
     })
     @SelectKey(statement="SELECT LAST_INSERT_ID()", keyProperty="id", before=false, resultType=Long.class)
     int insert(UserMapping record);
@@ -51,8 +51,8 @@ public interface UserMappingMapper {
         @Result(column="user_id", property="userId", jdbcType=JdbcType.VARCHAR),
         @Result(column="mobile", property="mobile", jdbcType=JdbcType.VARCHAR),
         @Result(column="email", property="email", jdbcType=JdbcType.VARCHAR),
-        @Result(column="create_time", property="createTime", jdbcType=JdbcType.TIMESTAMP),
-        @Result(column="update_time", property="updateTime", jdbcType=JdbcType.TIMESTAMP),
+        @Result(column="create_time", property="createTime", jdbcType=JdbcType.VARCHAR),
+        @Result(column="update_time", property="updateTime", jdbcType=JdbcType.VARCHAR),
         @Result(column="status", property="status", jdbcType=JdbcType.SMALLINT)
     })
     List<UserMapping> selectByExample(UserMappingExample example);
@@ -68,8 +68,8 @@ public interface UserMappingMapper {
         @Result(column="user_id", property="userId", jdbcType=JdbcType.VARCHAR),
         @Result(column="mobile", property="mobile", jdbcType=JdbcType.VARCHAR),
         @Result(column="email", property="email", jdbcType=JdbcType.VARCHAR),
-        @Result(column="create_time", property="createTime", jdbcType=JdbcType.TIMESTAMP),
-        @Result(column="update_time", property="updateTime", jdbcType=JdbcType.TIMESTAMP),
+        @Result(column="create_time", property="createTime", jdbcType=JdbcType.VARCHAR),
+        @Result(column="update_time", property="updateTime", jdbcType=JdbcType.VARCHAR),
         @Result(column="status", property="status", jdbcType=JdbcType.SMALLINT)
     })
     UserMapping selectByPrimaryKey(Long id);
@@ -88,8 +88,8 @@ public interface UserMappingMapper {
         "set user_id = #{userId,jdbcType=VARCHAR},",
           "mobile = #{mobile,jdbcType=VARCHAR},",
           "email = #{email,jdbcType=VARCHAR},",
-          "create_time = #{createTime,jdbcType=TIMESTAMP},",
-          "update_time = #{updateTime,jdbcType=TIMESTAMP},",
+          "create_time = #{createTime,jdbcType=VARCHAR},",
+          "update_time = #{updateTime,jdbcType=VARCHAR},",
           "status = #{status,jdbcType=SMALLINT}",
         "where id = #{id,jdbcType=BIGINT}"
     })

@@ -27,7 +27,7 @@
     <properties>
         <dubbo.version>2.7.1</dubbo.version>
         <sharding-sphere.version>4.0.1</sharding-sphere.version>
-        <myz.starters.version>1.1.1-SNAPSHOT</myz.starters.version>
+        <myz.starters.version>1.1.2-SNAPSHOT</myz.starters.version>
     </properties>
 
     <dependencyManagement>
@@ -52,6 +52,11 @@
             <dependency>
                 <groupId>com.myz.starters</groupId>
                 <artifactId>login-spring-boot-starter</artifactId>
+                <version>${myz.starters.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.myz.starters</groupId>
+                <artifactId>distribute-spring-boot-starter</artifactId>
                 <version>${myz.starters.version}</version>
             </dependency>
             <dependency>

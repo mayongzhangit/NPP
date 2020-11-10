@@ -5,6 +5,7 @@ import com.myz.npp.api.user.UserServiceApi;
 import com.myz.starters.aspect.method.annotation.ParamRetValPrinter;
 import com.myz.starters.distribute.sample.web.controller.annotation.MyzControllerAdviceAnno;
 import com.myz.starters.login.annotation.LoginRequired;
+import com.myz.starters.login.context.LoginContext;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,8 +29,15 @@ public class UserController {
     @Reference(version = "${dubbo.service.version}")
     private UserServiceApi userServiceApi;
 
+    @LoginRequired
+    @GetMapping("/get")
+    public ApiResult get(){
+        String userJson = LoginContext.get();
+        return ApiResult.OK(userJson);
+    }
+
     /**
-     * curl http://localhost:8081/user/get/1
+     * curl http://localhost/user/get/1
      * @param id
      * @return
      */

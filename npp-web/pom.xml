@@ -71,6 +71,21 @@
       <artifactId>zookeeper</artifactId>
       <version>3.4.14</version>
     </dependency>
+    <!--微信SDK下载地址 https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=11_1
+    下载到本地是一个普通的maven项目，直接打包拷贝jar到lib下
+    -->
+    <dependency>
+      <groupId>com.github.wxpay</groupId>
+      <artifactId>wxpay-sdk</artifactId>
+      <version>3.0.9</version>
+      <scope>system</scope> <!-- scope需要定义为system才可以-->
+      <systemPath>${project.basedir}/src/main/lib/wxpay-sdk-3.0.9.jar</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>org.bouncycastle</groupId>
+      <artifactId>bcprov-jdk15on</artifactId>
+      <version>1.64</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -78,6 +93,17 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <!--引用三方包（wxpay-sdk-3.0.9），且没有maven私服，可食用systempath，但是想将三方包打到jar包中，需要配置该出-->
+          <includeSystemScope>true</includeSystemScope>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>repackage</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>

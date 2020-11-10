@@ -41,11 +41,11 @@ public class UserMappingSqlProvider {
         }
         
         if (record.getCreateTime() != null) {
-            sql.VALUES("create_time", "#{createTime,jdbcType=TIMESTAMP}");
+            sql.VALUES("create_time", "#{createTime,jdbcType=VARCHAR}");
         }
         
         if (record.getUpdateTime() != null) {
-            sql.VALUES("update_time", "#{updateTime,jdbcType=TIMESTAMP}");
+            sql.VALUES("update_time", "#{updateTime,jdbcType=VARCHAR}");
         }
         
         if (record.getStatus() != null) {
@@ -102,11 +102,11 @@ public class UserMappingSqlProvider {
         }
         
         if (record.getCreateTime() != null) {
-            sql.SET("create_time = #{record.createTime,jdbcType=TIMESTAMP}");
+            sql.SET("create_time = #{record.createTime,jdbcType=VARCHAR}");
         }
         
         if (record.getUpdateTime() != null) {
-            sql.SET("update_time = #{record.updateTime,jdbcType=TIMESTAMP}");
+            sql.SET("update_time = #{record.updateTime,jdbcType=VARCHAR}");
         }
         
         if (record.getStatus() != null) {
@@ -125,8 +125,8 @@ public class UserMappingSqlProvider {
         sql.SET("user_id = #{record.userId,jdbcType=VARCHAR}");
         sql.SET("mobile = #{record.mobile,jdbcType=VARCHAR}");
         sql.SET("email = #{record.email,jdbcType=VARCHAR}");
-        sql.SET("create_time = #{record.createTime,jdbcType=TIMESTAMP}");
-        sql.SET("update_time = #{record.updateTime,jdbcType=TIMESTAMP}");
+        sql.SET("create_time = #{record.createTime,jdbcType=VARCHAR}");
+        sql.SET("update_time = #{record.updateTime,jdbcType=VARCHAR}");
         sql.SET("status = #{record.status,jdbcType=SMALLINT}");
         
         UserMappingExample example = (UserMappingExample) parameter.get("example");
@@ -151,11 +151,11 @@ public class UserMappingSqlProvider {
         }
         
         if (record.getCreateTime() != null) {
-            sql.SET("create_time = #{createTime,jdbcType=TIMESTAMP}");
+            sql.SET("create_time = #{createTime,jdbcType=VARCHAR}");
         }
         
         if (record.getUpdateTime() != null) {
-            sql.SET("update_time = #{updateTime,jdbcType=TIMESTAMP}");
+            sql.SET("update_time = #{updateTime,jdbcType=VARCHAR}");
         }
         
         if (record.getStatus() != null) {
