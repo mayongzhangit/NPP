@@ -1,4 +1,5 @@
 com\myz\npp\api\user\UserServiceApi.class
 com\myz\npp\api\user\dto\UserDto.class
 com\myz\npp\api\user\dto\UserInsertParam.class
+com\myz\npp\api\user\enums\UserTypeEnum.class
 com\myz\npp\api\user\dto\UserUpdateParam.class

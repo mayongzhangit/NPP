@@ -12,10 +12,9 @@
     <groupId>com.myz</groupId>
     <artifactId>npp-parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
 
     <modules>
-        <module>npp-service</module>
         <module>npp-operation</module>
         <module>npp-web</module>
         <module>npp-service-parent</module>

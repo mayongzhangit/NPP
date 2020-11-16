@@ -1,0 +1,17 @@
+com\myz\npp\service\usermapping\dao\model\UserMappingExample$GeneratedCriteria.class
+com\myz\npp\service\usermapping\dao\model\UserMappingExample$Criterion.class
+com\myz\npp\service\user\dao\model\User.class
+com\myz\npp\service\user\dao\model\UserExample$Criteria.class
+com\myz\npp\service\user\rpc\UserServiceRpc.class
+com\myz\npp\service\usermapping\dao\model\UserMappingExample.class
+com\myz\npp\service\usermapping\dao\model\UserMapping.class
+com\myz\npp\service\usermapping\dao\model\UserMappingExample$Criteria.class
+com\myz\npp\service\NppServiceCenterApp.class
+com\myz\npp\service\user\dao\mapper\UserMapper.class
+com\myz\npp\service\user\dao\mapper\UserSqlProvider.class
+com\myz\npp\service\usermapping\dao\mapper\UserMappingMapper.class
+com\myz\npp\service\user\dao\model\UserExample$GeneratedCriteria.class
+com\myz\npp\service\user\dao\model\UserExample$Criterion.class
+com\myz\npp\service\user\service\UserService.class
+com\myz\npp\service\usermapping\dao\mapper\UserMappingSqlProvider.class
+com\myz\npp\service\user\dao\model\UserExample.class

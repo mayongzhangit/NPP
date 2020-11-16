@@ -8,10 +8,10 @@
     .body-background {background-size: 100% }
 </style>
 <body class="body-background">
-    <form action="" enctype="application/x-www-form-urlencoded">
-        用户名：<input type="text" id="name" name=""><br>
-        密&nbsp;&nbsp;码：<input type="text" id="name" name=""><br>
-        <input type="button" value="登录" onclick=""/>
+    <form action="/h5-login/login" enctype="application/x-www-form-urlencoded">
+        手机号：<input type="text" id="mobile" name="mobile"><br>
+        密&nbsp;&nbsp;码：<input type="text" id="passwd" name="passwd"><br>
+        <input type="submit" value="登录"/>
     </form>
     <input type="button" onclick="doAuth(1)" value="微信静默授权"/>
     <input type="button" onclick="doAuth(2)" value="微信主动授权"/>
