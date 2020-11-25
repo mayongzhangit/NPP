@@ -16,7 +16,8 @@
 </body>
 <script type='text/javascript' src='./js/jquery-1.8.3.min.js' charset='utf-8'></script>
 <script type="text/javascript">
-    $.get("http://"+document.domain+"/user/get",function (result) {
+
+    $.get("/user/get",function (result) {
         console.log(result);
         var code = result.code;
         if("000000" == code){
@@ -24,7 +25,8 @@
             return;
         }
         if("000001" != code){
-            alert("请求数据失败"+result.message);
+            // alert("请求数据失败"+result.message);
+            window.location.href="/wechat-auth.html";
             return;
         }
         var data = result.data;

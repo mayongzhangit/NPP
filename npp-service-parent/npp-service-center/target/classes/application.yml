@@ -12,19 +12,15 @@ spring:
       loadOnStartup: 1
   profiles:
     active: local
-    include: dubbo,mystarter,usersharding
+    include: dubbo,mystarter,usersharding,accountbooksharding
 logging:
   level:
 #    PARAM-RETVAL-PRINTER: debug
     com.myz.npp.service.user.dao.mapper: info
+    com.myz.npp.service.accountbook.dao.mapper: info
+
 management:
   endpoints:
     web:
       exposure:
         include: "*"
-
-distribute:
-  id:
-    snowflake:
-      data-center-id: 1
-      worker-id: 1

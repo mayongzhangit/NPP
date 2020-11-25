@@ -1,7 +1,7 @@
 spring:
   shardingsphere:
     datasource:
-      names: default,userds0,userds1,userds2
+      names: default,userds0 # default,userds0,userds1,userds2
       default:
         type: com.alibaba.druid.pool.DruidDataSource
         url: jdbc:mysql://47.99.144.200:3306/npp?characterEncoding=UTF-8
@@ -14,25 +14,37 @@ spring:
         username: zjx_rd
         password: zaijiaxue
         driver-class-name: com.mysql.jdbc.Driver
-      userds1:
-        type: com.alibaba.druid.pool.DruidDataSource
-        url: jdbc:mysql://47.99.144.200:3306/user_ds1?characterEncoding=UTF-8
-        username: zjx_rd
-        password: zaijiaxue
-        driver-class-name: com.mysql.jdbc.Driver
+        # druid attribute 将会被直接反射调用DruidDataSource#setxx属性中
+        maxActive: 50 # 10
+        minIdel: 0
+        statViewServlet:
+          loginUsername: npp
+          loginPassword: npp
+#      userds1:
+#        type: com.alibaba.druid.pool.DruidDataSource
+#        url: jdbc:mysql://47.99.144.200:3306/user_ds1?characterEncoding=UTF-8
+#        username: zjx_rd
+#        password: zaijiaxue
+#        driver-class-name: com.mysql.jdbc.Driver
+#      userds2:
+#        type: com.alibaba.druid.pool.DruidDataSource
+#        url: jdbc:mysql://47.99.144.200:3306/user_ds2?characterEncoding=UTF-8
+#        username: zjx_rd
+#        password: zaijiaxue
+#        driver-class-name: com.mysql.jdbc.Driver
     sharding:
       defaultDataSourceName: default
       tables:
         npp_user:
-          actualDataNodes: userds$->{0..1}.npp_user$->{0..2}
+          actualDataNodes: userds0.npp_user$->{0..8} #userds$->{0..1}.npp_user$->{0..2}
           databaseStrategy:
             inline:
               shardingColumn: user_id
-              algorithmExpression: userds$->{java.lang.Long.parseLong(user_id)% 2}
+              algorithmExpression: userds0 #userds$->{java.lang.Long.parseLong(user_id)% 2}
           tableStrategy:
             inline:
               shardingColumn: user_id
-              algorithmExpression: npp_user$->{java.lang.Long.parseLong(user_id) %3} # 用hashCode 容易出现负值 需要绝对值一下，但有可能重复
+              algorithmExpression: npp_user$->{java.lang.Long.parseLong(user_id) %9} # 用hashCode 容易出现负值 需要绝对值一下，但有可能重复
     props:
       sql:
         show: true

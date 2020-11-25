@@ -5,3 +5,11 @@ aspect:
       enabled: true
     retVal:
       enabled: false
+distribute:
+  id:
+    snowflake:
+      data-center-id: 1
+      worker-id: 1
+  lock:
+    redis:
+      enabled: false

@@ -54,7 +54,7 @@ public class NppWebApp implements CommandLineRunner {
         log.info("①引入入参出参组件aspect-spring-boot-starter 【类或方法添加@ParamRetValPrinter注解】【logback-spring.xml配置log name为PARAM-RETVAL-PRINTER的logger和appender】");
         log.info("②引入spring-boot-actuator组件，配置actuator management 暴露logger端点");
         log.info("③遇到问题或想看入参出参，执行curl -XPOST -H \"Content-type:application/json;\"  http://localhost/api/actuator/loggers/PARAM-RETVAL-PRINTER?configuredLevel=DEBUG 修改日志级别");
-        log.info("④dubbo consumer check false");
+        log.info("④dubbo consumer check ,timeout,retry");
         log.info("************************************************");
     }
 }

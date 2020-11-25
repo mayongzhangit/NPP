@@ -24,7 +24,6 @@
     <url>http://www.example.com</url>
 
     <properties>
-        <dubbo.version>2.7.1</dubbo.version>
         <sharding-sphere.version>4.0.1</sharding-sphere.version>
         <myz.starters.version>1.1.2-SNAPSHOT</myz.starters.version>
     </properties>

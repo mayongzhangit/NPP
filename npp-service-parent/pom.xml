@@ -19,5 +19,6 @@
         <module>npp-service-center</module>
         <module>npp-user-api</module>
         <module>npp-account-api</module>
+        <module>npp-test-api</module>
     </modules>
 </project>

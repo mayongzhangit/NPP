@@ -24,9 +24,3 @@ management:
     web:
       exposure:
         include: "*"
-
-distribute:
-  id:
-    snowflake:
-      data-center-id: 1
-      worker-id: 1

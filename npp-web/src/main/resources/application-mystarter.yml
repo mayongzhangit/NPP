@@ -4,4 +4,4 @@ aspect:
     param:
       enabled: true
     retVal:
-      enabled: false
+      enabled: true
