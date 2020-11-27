@@ -15,6 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.dubbo.config.annotation.Method;
 import org.apache.dubbo.config.annotation.Reference;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -69,6 +70,24 @@ public class H5LoginController {
         return userDataApiResult;
     }
 
+    /**
+     * 登录页
+     * @return
+     */
+    @GetMapping("/login-page")
+    public ModelAndView loginPage() {
+        return new ModelAndView("login-page"); // ftl
+    }
+
+    /**
+     * 登陆成功到首页
+     * @param mobile
+     * @param passwd
+     * @param request
+     * @param resp
+     * @return
+     * @throws JsonProcessingException
+     */
     @PostMapping("/login-2-index")
     public ModelAndView login2Index(String mobile, String passwd,
                                     HttpServletRequest request, HttpServletResponse resp) throws JsonProcessingException {
@@ -81,7 +100,7 @@ public class H5LoginController {
         String userJson = objectMapper.writeValueAsString(userDto);
         CookieUtil.set(userJson,request,resp);
         userDataApiResult.setUserJson(userJson);
-        return new ModelAndView("reg");
+        return new ModelAndView("index"); // ftl
     }
     /**
      * curl -XPOST http://localhost:8888/h5-login/reg -d "mobile=15701311193&passwd=123456&confirmPasswd=123456"

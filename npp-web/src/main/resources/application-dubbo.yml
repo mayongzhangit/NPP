@@ -6,10 +6,10 @@ dubbo:
     name: ${spring.application.name}-dubbo-consumer
   registry:
     address: zookeeper://127.0.0.1:2181 #N/A
-    file: ${user.home}/dubbo-cache/${spring.application.name}/dubbo.cache
+    file: ${user.home}/dubbo-cache/${spring.application.name}/dubbo.cache #服务列表cache
   consumer:
     check: false
-    timeout: 5000 # 默认值是 ms？由Server决定的吗？ 那么Server端的默认超时时间是多少
+    timeout: 5000 # 默认值是 ms？由Server决定的，Server端的默认超时时间是多少
 npp:
   service:
     version: 1.0.0
