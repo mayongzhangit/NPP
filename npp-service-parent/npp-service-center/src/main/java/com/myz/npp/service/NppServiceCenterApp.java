@@ -15,7 +15,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @Slf4j
 @MapperScan({"com.myz.npp.service.user.dao.mapper",
-        "com.myz.npp.service.usermapping.dao.mapper"})
+        "com.myz.npp.service.usermapping.dao.mapper",
+        "com.myz.npp.service.accountbook.dao.mapper"
+})
 @SpringBootApplication(exclude = DruidDataSourceAutoConfigure.class)
 public class NppServiceCenterApp implements CommandLineRunner {
 

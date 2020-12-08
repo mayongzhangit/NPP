@@ -12,7 +12,7 @@ spring:
       loadOnStartup: 1
   profiles:
     active: local
-    include: dubbo,mystarter,usersharding,accountbooksharding
+    include: dubbo,mystarter,sharding
 logging:
   level:
 #    PARAM-RETVAL-PRINTER: debug
