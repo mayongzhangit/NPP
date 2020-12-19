@@ -77,11 +77,11 @@
     </dependency>
     <!-- dubbo end -->
     <!-- zkServer版本低 显示指定zookeeper 客户端版本 否则出现：KeeperErrorCode = Unimplemented for  -->
-    <dependency>
-      <groupId>org.apache.zookeeper</groupId>
-      <artifactId>zookeeper</artifactId>
-      <version>3.4.14</version>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>org.apache.zookeeper</groupId>-->
+<!--      <artifactId>zookeeper</artifactId>-->
+<!--      <version>3.4.14</version>-->
+<!--    </dependency>-->
     <!--微信SDK下载地址 https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=11_1
     下载到本地是一个普通的maven项目，直接打包拷贝jar到lib下
     -->

@@ -6,6 +6,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.socket.server.standard.ServerEndpointExporter;
 
@@ -20,6 +21,7 @@ import org.springframework.web.socket.server.standard.ServerEndpointExporter;
         "com.myz.npp.service.usermapping.dao.mapper",
         "com.myz.npp.service.accountbook.dao.mapper"
 })
+//@EnableDiscoveryClient
 @SpringBootApplication(exclude = DruidDataSourceAutoConfigure.class)
 public class NppServiceCenterApp implements CommandLineRunner {
 
