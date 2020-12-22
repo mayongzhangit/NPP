@@ -67,14 +67,14 @@
       <groupId>org.apache.dubbo</groupId>
       <artifactId>dubbo</artifactId>
     </dependency>
-    <dependency>
-      <groupId>org.apache.curator</groupId>
-      <artifactId>curator-framework</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.curator</groupId>
-      <artifactId>curator-recipes</artifactId>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>org.apache.curator</groupId>-->
+<!--      <artifactId>curator-framework</artifactId>-->
+<!--    </dependency>-->
+<!--    <dependency>-->
+<!--      <groupId>org.apache.curator</groupId>-->
+<!--      <artifactId>curator-recipes</artifactId>-->
+<!--    </dependency>-->
     <!-- dubbo end -->
     <!-- zkServer版本低 显示指定zookeeper 客户端版本 否则出现：KeeperErrorCode = Unimplemented for  -->
 <!--    <dependency>-->
