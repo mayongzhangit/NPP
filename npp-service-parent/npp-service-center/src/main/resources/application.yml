@@ -10,9 +10,9 @@ spring:
   cloud:
     nacos:
       discovery:
-        namespace: npp-public
+        namespace: npp-discovery-ns
         clusterName: npp-cluster
-        server-addr: 127.0.0.1:8848
+        serverAddr: 127.0.0.1:8848
   mvc:
     servlet:
       loadOnStartup: 1

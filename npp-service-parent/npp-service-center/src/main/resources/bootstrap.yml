@@ -2,4 +2,6 @@ spring:
   cloud:
     nacos:
       config:
-        server-addr: 127.0.0.1:8848
+        group: npp-provier-group
+        namespace: npp-config-ns
+        serverAddr: 127.0.0.1:8848

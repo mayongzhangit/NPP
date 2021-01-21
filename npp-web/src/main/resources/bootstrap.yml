@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: npp-web
+  cloud:
+    nacos:
+      config:
+        enable: true # PropertySourceLocator#locator -> PropertySourceBootstrapConfiguration -> ApplicationContextInitializer#initialize ->SpringApplication#prepareContext
+#        name: ${spring.application.name}
+        serverAddr: 127.0.0.1:8848
+        fileExtension: properties
+        namespace: 74af9f24-8141-411a-81aa-7907e4de6e11 # nacos server 控制台中的namespaceId74af9f24-8141-411a-81aa-7907e4de6e11
+        # 多个项目共享配置比如zookeeper集群 https://github.com/alibaba/spring-cloud-alibaba/issues/141
